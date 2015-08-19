@@ -68,14 +68,18 @@
     <div class="site-content">
         {{ content }}
     </div>
-
+   
     <aside class="site-aside">
-        <div class="inner">
+      
+        <div class="inner">	
+           
+				<a class="hopwork_widget" href="https://www.hopwork.com/profile/jeanfrancoisfourmond" data-id="553931c9e4b05fc12ebfc2b4" data-picture="false" data-tags="false" data-recos="true" data-height="350" data-width="250">Voir mon profil freelance</a>
+           
             <div class="block">
                 <form action="{{ site.baseurl }}/search">
                     <input type="search" id="search" name="q" placeholder="{{ site.str_search }}" />
                 </form>
-            </div>
+            </div>          
             <ul>
                 {% assign pages = (site.pages | sort: 'order') %}
                 {% for page in pages %}
