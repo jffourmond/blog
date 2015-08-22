@@ -41,7 +41,7 @@ permalink: pretty
 #
 # Scripts.
 #
-google_analytics: # e.g. UA-000000-01
+google_analytics: UA-66633059-1
 disqus: jffourmond
 
 #
