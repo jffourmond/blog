@@ -3,7 +3,7 @@
 #
 #url: http://qckanemoto.github.io # or http://you.github.io
 url: http://jffourmond.github.io
-baseurl: http://jffourmond.github.io
+baseurl: ""
 title: Jean-François Fourmond
 description: développeur freelance
 avatar: /assets/img/icone8.jpg
