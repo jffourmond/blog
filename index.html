@@ -17,11 +17,6 @@ layout: default
             <a class="btn" href="{{ post.url | prepend: site.baseurl }}">{{ site.str_read_more }}</a>
             {% else %}
             {{ post.content }}
-                {% if site.disqus %}
-    			<section class="comments">
-    			    {% include disqus.html %}
-    			</section>
-    		    {% endif %}
             {% endif %}
         </section>
     </article>
