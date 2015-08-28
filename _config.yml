@@ -6,7 +6,7 @@ url: http://localhost:4000
 baseurl: ""
 title: Jean-François Fourmond
 description: développeur freelance
-avatar: /assets/img/icone8.jpg
+avatar: /assets/img/lama.jpg
 
 #
 # Icons
@@ -70,7 +70,7 @@ paginate_path: page/:num
 #
 share_buttons: false
 ogp:
-  image_url: http://qckanemoto.github.io/jekyll-qck-theme/assets/img/ogp.png
+  image_url: http://jffourmond.github.io/assets/img/lama.jpg
   fb:
     admin: # facebook admin id
     app_id: # facebook application id

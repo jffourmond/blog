@@ -2,7 +2,7 @@
 layout: page
 title: À propos
 permalink: /about/
-order: 1
+order: 2
 share: false
 ---
 
