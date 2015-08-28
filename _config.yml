@@ -2,9 +2,9 @@
 # Basic settings.
 #
 #url: http://qckanemoto.github.io # or http://you.github.io
-url: http://localhost:4000
+url: http://jffourmond.github.io
 baseurl: ""
-title: Jean-François Fourmond
+title: Le blog de Jean-François Fourmond
 description: développeur freelance
 avatar: /assets/img/lama.jpg
 
@@ -41,7 +41,7 @@ permalink: pretty
 #
 # Scripts.
 #
-google_analytics: # e.g. UA-000000-01
+google_analytics: UA-66633059-1
 disqus: jffourmond
 
 #
@@ -80,6 +80,7 @@ ogp:
 #
 gems:
   - jemoji
+  - jekyll-sitemap  
 
 #
 # Styles: see "_sass/base/_variables.scss"
