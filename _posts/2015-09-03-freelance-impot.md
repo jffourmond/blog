@@ -8,6 +8,9 @@ du montant de l'impot sur le revenu que je devrai payer. J'espère qu'elle pourr
 
 L'application est développée avec AngularJS 1.4 et Bootstrap 3. 
 La courbe interactive utilise une directive basée sur NVD3 et D3.js.
-Elle tourne dans un container Docker avec Apache, et est accessible ici : http://www.freelance-impot.fr
-
+L'appli tourne dans un container Docker qui récupère les sources depuis GitHub et les copie dans un Apache. 
 Le Dockerfile comme le code source sont disponibles ici : https://github.com/jffourmond/freelance-impot
+
+http://www.freelance-impot.fr
+
+
