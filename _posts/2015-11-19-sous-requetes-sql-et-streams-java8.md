@@ -25,7 +25,7 @@ j'ai fini par me lancer dans le deep web des développeurs, c'est à dire la pag
 J'ai trouvé ma réponse sur ce site plein d'exemples intéressants : 
 [Java 8 – Collection enhancements leveraging Lambda Expressions – or: How Java emulates SQL](https://technology.amis.nl/2013/10/05/java-8-collection-enhancements-leveraging-lambda-expressions-or-how-java-emulates-sql/)
 
-La solution est de passer une lambda implémentant l'interface Comparator. 
+La solution est de passer à la fonction max() une lambda implémentant l'interface Comparator. 
 Dans notre cas, ça donne donc :
 
 {% highlight java %}
