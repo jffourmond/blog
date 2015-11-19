@@ -20,7 +20,7 @@ WHERE nbButs = (SELECT MAX(nbButs) FROM footballeur);
 
 En Java, on trouve beaucoup d'exemples permettant de récupérer le plus grand élément d'une liste, 
 mais moins pour récupérer les propriétés de l'objet associé. 
-J'ai eu ce genre de problématique cette semaine, et après un long quart d'heure de recherches, 
+J'ai eu ce genre de problématique cette semaine, et après un long quart d'heure de recherches infructueuses, 
 j'ai fini par me lancer dans le deep web des développeurs, c'est à dire la page 2 de Google. 
 J'ai trouvé ma réponse sur ce site plein d'exemples intéressants : 
 [Java 8 – Collection enhancements leveraging Lambda Expressions – or: How Java emulates SQL](https://technology.amis.nl/2013/10/05/java-8-collection-enhancements-leveraging-lambda-expressions-or-how-java-emulates-sql/)
