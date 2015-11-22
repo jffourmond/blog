@@ -29,10 +29,8 @@ La solution est de passer à la fonction max() une lambda implémentant l'interf
 Dans notre cas, ça donne donc :
 
 {% highlight java %}
-  static Optional<Footballeur> getMeilleurButeur(List<Footballeur> footballeurs){
-    return footballeurs.stream().
+  Footballeur meilleurButeur = getFootballeurs().stream().
     		max((f1, f2) -> f1.nbButs - f2.nbButs);
-  }
 {% endhighlight %}  
 
 Tout simplement !
