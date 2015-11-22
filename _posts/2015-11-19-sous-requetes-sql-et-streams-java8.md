@@ -14,7 +14,7 @@ class Footballeur {
 
 En SQL, c'est facile, on ferait une sous requête :
 {% highlight sql %}
-SELECT nom FROM footballeur
+SELECT * FROM footballeur
 WHERE nbButs = (SELECT MAX(nbButs) FROM footballeur);
 {% endhighlight %}
 
