@@ -30,7 +30,7 @@ Dans notre cas, ça donne donc :
 
 {% highlight java %}
 Footballeur meilleurButeur = getFootballeurs().stream().
-    		max((f1, f2) -> f1.nbButs - f2.nbButs);
+    		max((f1, f2) -> f1.nbButs - f2.nbButs).get();
 {% endhighlight %}  
 
 Tout simplement !
