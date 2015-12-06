@@ -12,18 +12,23 @@ J'ai d'abord essayé d'utiliser Babel comme un polyfill, pour ne pas avoir à aj
 <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 {% endhighlight %}
 
-Ensuite, j'ai migré mon tout code pour avoir des classes et des modules ES6, et bien sûr, ça n'a pas marché du 1er coup. Ça n'a même pas marché du tout. On trouve pas mal de posts de blogs sur le sujet, mais les exemples sont souvent inutilement compliqués. Au bout d'un certain temps, j'ai tout recommencé depuis zéro en partant sur un simple Hello Wolrd.
+Ensuite, j'ai migré mon tout code pour avoir des classes et des modules ES6, et bien sûr, ça n'a pas marché du 1er coup. 
+Ça n'a même pas marché du tout. On trouve pas mal de posts de blogs sur le sujet, 
+mais les exemples sont souvent inutilement compliqués. Au bout d'un certain temps, 
+j'ai tout recommencé depuis zéro en partant sur un simple Hello Wolrd.
 
 Au final, il y a juste quelques trucs à savoir :
 
-- Il faut inclure le code de son application avec type="module" (et non pas type="application/javascript"). 
+- Il faut inclure le code de son application avec <span style="font-family: Courier New">type="module"</span> 
+(et non pas <span style="font-family: Courier New">type="application/javascript"</span>). 
 Exemple : 
  
 {% highlight html %}
 <script type="module" src="app.js"></script>
 {% endhighlight %}
 
-- Il faut utiliser la syntaxe "Controller as" introduite en Angular 1.2 (mais il n'est pas obligatoire d'utiliser des routes).
+- Il faut utiliser la syntaxe "Controller as" introduite en Angular 1.2 
+(mais il n'est pas obligatoire de configurer des routes).
 Exemple (fichier index.html) : 
 
 {% highlight html %}
