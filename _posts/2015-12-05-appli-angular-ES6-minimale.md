@@ -28,7 +28,7 @@ Ensuite, j'ai migré mon tout code pour avoir des classes et des modules ES6, et
 mais les exemples sont souvent inutilement compliqués. Au bout d'un certain temps, 
 j'ai tout recommencé depuis zéro en partant sur un simple Hello Wolrd.
 
-##Le code à modifier
+##Ce qui change dans le code
 
 Au final, il y a juste quelques trucs à savoir :
 
