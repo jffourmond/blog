@@ -26,7 +26,7 @@ J'ai d'abord essayé d'utiliser Babel comme un polyfill, pour ne pas avoir à aj
 Ensuite, j'ai migré mon tout code pour avoir des classes et des modules ES6, et bien sûr, ça n'a pas marché du 1er coup. 
 Ça n'a même pas marché du tout. On trouve pas mal de posts de blogs sur le sujet, 
 mais les exemples sont souvent inutilement compliqués. Au bout d'un certain temps, 
-j'ai tout recommencé depuis zéro en partant sur un simple Hello Wolrd.
+j'ai tout recommencé depuis zéro en partant sur un simple Hello World.
 
 ##Ce qui change dans le code
 
@@ -70,6 +70,9 @@ export default class HelloController {
 }
 {% endhighlight %}
 
+Pour savoir comment migrer ses contrôleurs, je conseille ce post qui explique bien la transformation en classes étape par étape : 
+[Awesome Angular Controllers with ES6: 6 Easy Steps!](http://essenceofcode.com/2015/08/21/awesome-angular-controllers-with-es6-6-easy-steps/)
+
 - Angular doit être _boostrapé_ depuis le code (pas possible d'utiliser ng-app, les modules étant chargés de façon asynchrone)
 Exemple (fichier app.js) : 
 
@@ -85,5 +88,4 @@ angular.bootstrap(document, [applicationName]);
 
 Et c'est tout ! Les 3 fichiers mentionnés sont disponibles sur [GitHub](https://github.com/jffourmond/angular1-es6). 
 
-Bien sûr, ça dégrade les perfs et il ne faut pas compiler son code ES6 à la volée sur une grosse appli. A part ça, pour savoir comment migrer son code Angular 1.X vers ES2015, je conseille de commencer par ce post, qui explique bien comment transformer ses contrôleurs en classes, étape par étape : 
-[Awesome Angular Controllers with ES6: 6 Easy Steps!](http://essenceofcode.com/2015/08/21/awesome-angular-controllers-with-es6-6-easy-steps/)
+Bien sûr, la compilation à la volée dégrade les perfs et il ne faut pas faire ça sur une grosse appli !
