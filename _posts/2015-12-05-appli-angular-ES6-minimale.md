@@ -65,7 +65,7 @@ export default class HelloController {
      }
  
      sayHello(){
-       this.text += 'Hello ! '
+       this.text += 'Hello ! ';
      }
 }
 {% endhighlight %}
