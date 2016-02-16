@@ -14,7 +14,7 @@ puis de migrer un contrôleur JavaScript simple vers ES6 pour valider que la com
 Ça n'a pas posé de problème particulier, mais je me suis demandé si c'était aussi facile de migrer 
 toute une application en ES6, et j'ai donc commencé à le faire sur une application perso.
 
-###Babel ou Traceur ?
+### Babel ou Traceur ?
 
 J'ai d'abord essayé d'utiliser Babel comme un polyfill, pour ne pas avoir à ajouter un outil de build à mon appli toute simple. C'est facile d'inclure le script Babel.js depuis son HTML, mais Babel avait besoin d'autres dépendances et je n'avais pas envie d'ajouter je-ne-sais-combien de fichiers à la main, ni d'utiliser NPM. Je me suis donc tourné vers Traceur, le compilateur de Google, qui n'a pas bonne presse mais qui tient en 2 fichiers. Avec Traceur, il suffit donc d'ajouter les 2 lignes suivantes à son HTML pour pouvoir l'utiliser :
 
@@ -28,7 +28,7 @@ Ensuite, j'ai migré mon tout code pour avoir des classes et des modules ES6, et
 mais les exemples sont souvent inutilement compliqués. Au bout d'un certain temps, 
 j'ai tout recommencé depuis zéro en partant sur un simple Hello World.
 
-##Ce qui change dans le code
+## Ce qui change dans le code
 
 Au final, il y a juste quelques trucs à savoir :
 
