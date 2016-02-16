@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Comment coder une application Angular 1 en ECMAScript 2015 sans outil de build
+title: Coder une application minimale en Angular 1 et ECMAScript 2015, sans outil de build
 tags: ECMAScript ES6 JavaScript Angular Traceur
 ---
 Le standard ECMAScript 2015 (ou ECMAScript 6 ou ES6) définissant la nouvelle version de JavaScript a été adopté en juin, 
