@@ -32,6 +32,8 @@ j'ai tout recommencé depuis zéro en partant sur un simple Hello World.
 
 Au final, il y a juste quelques trucs à savoir :
 
+- En plus de Traceur, il faut inclure le chargeur de modules [SystemJS](https://github.com/systemjs/systemjs).
+
 - Il faut inclure le code de son application avec <span style="font-family: Courier New">type="module"</span> 
 (et non pas <span style="font-family: Courier New">type="application/javascript"</span>). 
 Exemple : 
