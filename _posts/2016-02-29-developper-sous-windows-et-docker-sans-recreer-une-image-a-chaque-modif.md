@@ -26,7 +26,7 @@ qui s'occupe de démarrer la VM via VirtualBox.
 Mais pour recharger les sources à chaud sur son conteneur Docker, il va falloir un peu de configuration. 
 En effet, comme Docker tourne sur la VM, il ne voit pas nos sources qui, elles, se trouvent sous Windows. 
 Il va donc falloir faire transiter ses sources de Windows au conteneur Docker en passant par la VM gérée par VirtualBox. 
-Personnellement, je trouve qu'au début ça n'est pas évident, et quelques captures d'écran ne feront pas de mal.
+Personnellement, je trouve que ce n'est pas évident, et je vais donc illustrer ce post avec quelques captures d'écran.
 
 # Configuration
 
