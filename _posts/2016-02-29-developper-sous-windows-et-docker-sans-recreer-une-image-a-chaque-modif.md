@@ -28,13 +28,13 @@ En effet, comme Docker tourne sur la VM, il ne voit pas nos sources qui, elles, 
 Il va donc falloir faire transiter ses sources de Windows au conteneur Docker en passant par la VM gérée par VirtualBox. 
 Personnellement, je trouve qu'au début ça n'est pas évident, et quelques captures d'écran ne feront pas de mal.
 
-#Configuration
+# Configuration
 
 La configuration se fait en 3 étapes. Dans les captures d'écran ci-dessous, 
 on prendra l'exemple d'une appli front nommée angular1-es6 tournant sous Apache, 
 et dont les sources sont dans un dossier Windows D:\jeff\boulot\angular1-es6. On n'utilise pas de Dockerfile dans cet exemple.
 
-##1. Dans VirtualBox
+## 1. Dans VirtualBox
 
 Lancer le Docker Quickstart Terminal, puis VirtualBox (ces deux outils peuvent être installés via la [Docker Toolbox](https://www.docker.com/products/docker-toolbox)). 
 Dans la configuration de la VM « default » créée automatiquement dans VirtualBox, cliquer sur « Dossiers partagés » et ajouter un dossier partagé. 
@@ -43,7 +43,7 @@ Laisser les cases cochées par défaut (Montage automatique, Configuration perma
 
 ![Configuration de VirtualBox]({{ site.url }}/assets/img/virtualbox.png)
 
-##2. Dans la VM Linux
+## 2. Dans la VM Linux
 
 Il va falloir monter le dossier partagé que l'on vient d'ajouter dans VirtualBox. 
 
@@ -67,7 +67,7 @@ sudo mount -t vboxsf es6 /vmWorkDir
 ![Configuration de la VM Linux]({{ site.url }}/assets/img/vm.png)
 <center><i>Il faudrait penser à mettre à jour l'ascii art...</i></center>
 
-##3. Dans le Docker Quickstart Terminal
+## 3. Dans le Docker Quickstart Terminal
 Maintenant que le lien est fait entre Windows et la VM, on peut utiliser lancer son conteneur Docker comme sous Linux, ou presque. 
 On utilise toujours l'option -v pour monter ses sources, mais le dossier qu'on va passer en paramètre est le dossier monté sur la VM (ex : /vmWorkDir), pas celui de Windows.
 
@@ -80,13 +80,13 @@ docker run -p 8000:80 -v /vmWorkDir/:/usr/local/apache2/htdocs/ -it httpd:2.4
 Et voilà, désormais chaque modif des sources dans le dossier Windows D:\jeff\boulot\angular1-es6 sera propagée dans la VM Linux dans le dossier /vmWorkDir, 
 puis dans le conteneur Docker dans le dossier /user/local/apache2/htdocs. 
 
-#Test
+# Test
 
 On peut tester en ouvrant un navigateur, non pas sur localhost, mais sur l'IP de la VM qui est par défaut 192.168.99.100.
 
 ![Test dans un navigateur]({{ site.url }}/assets/img/navigateur.png)
 
-#Références
+# Références
 
 * [How to mount a VirtualBox shared folder? (serverfault)](http://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder)
 * [Utiliser Docker pour son environnement de développement (Raphaël Gonçalves)](http://www.raphael-goncalves.fr/blog/utiliser-docker-pour-son-environnement-de-developpement)
