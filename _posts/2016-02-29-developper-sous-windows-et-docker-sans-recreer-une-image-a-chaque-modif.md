@@ -47,7 +47,6 @@ Laisser les cases cochées par défaut (Montage automatique, Configuration perma
 
 Il va falloir monter le dossier partagé que l'on vient d'ajouter dans VirtualBox. 
 
-
 D'abord, ouvrir un terminal et taper la commande suivante : 
 {% highlight bash %}
 docker-machine ssh default
@@ -79,6 +78,9 @@ docker run -p 8000:80 -v /vmWorkDir/:/usr/local/apache2/htdocs/ -it httpd:2.4
 
 Et voilà, désormais chaque modif des sources dans le dossier Windows D:\jeff\boulot\angular1-es6 sera propagée dans la VM Linux dans le dossier /vmWorkDir, 
 puis dans le conteneur Docker dans le dossier /user/local/apache2/htdocs. 
+
+Au final, le cheminement des sources ressemble à ça : 
+![Configuration de VirtualBox]({{ site.url }}/assets/img/chheminement.png)
 
 # Test
 
