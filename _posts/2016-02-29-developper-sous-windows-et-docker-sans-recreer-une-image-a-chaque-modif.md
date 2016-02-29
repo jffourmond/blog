@@ -58,7 +58,7 @@ Créer un dossier à l'endroit de son choix. Exemple :
 {% highlight bash %}
 sudo mkdir /vmWorkDir 
 {% endhighlight %}
-Puis monter les sources avec la commande mount. Ici, il faut bien faire correspondre le nom du volume à monter avec le nom du dossier qu'on a partagé dans VirtualBox (es6) : 
+Puis monter les sources avec la commande mount. Ici, il faut bien faire correspondre le nom du volume à monter avec le nom du dossier qu'on a partagé dans VirtualBox (ici : es6) : 
 {% highlight bash %}
 sudo mount -t vboxsf es6 /vmWorkDir
 {% endhighlight %}
