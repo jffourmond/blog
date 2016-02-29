@@ -80,7 +80,7 @@ Et voilà, désormais chaque modif des sources dans le dossier Windows D:\jeff\b
 puis dans le conteneur Docker dans le dossier /user/local/apache2/htdocs. 
 
 Au final, le cheminement des sources ressemble à ça : 
-![Configuration de VirtualBox]({{ site.url }}/assets/img/chheminement.png)
+![Configuration de VirtualBox]({{ site.url }}/assets/img/cheminement.png)
 
 # Test
 
