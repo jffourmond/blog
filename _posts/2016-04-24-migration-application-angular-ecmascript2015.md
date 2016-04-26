@@ -48,7 +48,6 @@ Par contre je n'ai pas d'exemples de directives/components dans mon appli, ça s
 
 Pour le bootstrap de l'application et l'injection de dépendances, ça se passe donc dans le fichier principal de l'application : 
 {% highlight javascript %} 
-
 import nombreEntierFilter from './nombreEntierFilter';
 import CalculService from './CalculService';
 import CalculController from './CalculController';
@@ -62,6 +61,10 @@ angular.module(applicationName).service("CalculService", CalculService);
 angular.module(applicationName).controller("CalculController", ["CalculService", CalculController]);
 angular.module(applicationName).controller('CourbeController', ['CalculService', 'nombreEntierFilter', CourbeController]);
 angular.module(applicationName).controller("ContactController", ContactController);
+
+...
+
+angular.bootstrap(document, [applicationName]);
 {% endhighlight %} 
 
 ### Dans les tests
