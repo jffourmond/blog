@@ -17,7 +17,7 @@ L'appli doit être iso-fonctionnelle une fois la migration terminée :
 - exécution des tests Jasmine toujours possible depuis la page [http://freelance-impot.fr/specRunner.html](http://www.freelance-impot.fr/specRunner.html)
 - debuggage possible du code source d'origine dans le navigateur (autrement dit : sourceMaps)
 
-##Utilisation des nouveautés d'ECMAScript 2015
+## Utilisation des nouveautés d'ECMAScript 2015
 
 Les contrôleurs et les services deviennent des classes. Les dépendances sont passées en paramètre des constructeurs :
 
@@ -64,7 +64,7 @@ angular.module(applicationName).controller('CourbeController', ['CalculService',
 angular.module(applicationName).controller("ContactController", ContactController);
 {% endhighlight %} 
 
-###Dans les tests
+### Dans les tests
 
 Dans les tests, on instancie les classes avec "new". Il faut donc les importer dans chaque spec.
 {% highlight javascript %} 
@@ -87,14 +87,14 @@ function calculControllerSpec() {
 }    
 {% endhighlight %} 
 
-##Ajout d'un outil de build
+## Ajout d'un outil de build
 
 L'ancienne version de l'appli était déployée "nue", sans modification des fichiers source HTML, CSS et JS. 
 Les tests étant exécutés depuis une page web, l'appli n'avait pas besoin d'outil de build. 
 Pour la nouvelle version, j'avais donc le choix de l'outil à utiliser. 
 Je savais juste que cette fois, j'allais utiliser Babel pour compiler (ou transpiler) le code ES2015 en ES5.
 
-###Babel...ify, via Browserify
+### Babel...ify, via Browserify
 
 J'ai d'abord pensé que Babel suffirait, mais j'avais oublié le cas particulier des modules. 
 Comme il n'y a pas d'équivalent aux modules ES2015 en JavaScript, Babel doit compiler les modules ES2015 vers un format tiers comme AMD ou CommonJS (le choix par défaut). 
@@ -105,7 +105,7 @@ Donc on compile le code ES2015 en JavaScript+CommonJS avec Babel, puis on rend l
 Babel étant relégué à une étape de "transformation" pour Browserify nommée Babelify. 
 Bon, et maintenant, qui va lancer Browserify ?
 
-###Tentative avec Gulp
+### Tentative avec Gulp
 
 Travaillant chez mon client sur un projet buildé avec Gulp, je me suis d'abord tourné vers cet outil en pensant gagner du temps. 
 Après des heures perdues à installer des tas de plugins Gulp (mais [pas le plugin gulp-browserify qui, lui, est blacklisté](https://github.com/gulpjs/plugins/issues/47)) 
@@ -117,7 +117,7 @@ gulp returned a non-zero code: 1
 Pfff... Je n'ai pas réussi à en savoir plus, et il ne m'en fallait pas plus : poubelle. De toute façon, [Gulp, c'est nul](https://www.tildedave.com/2015/01/07/i-find-gulp-extremely-frustrating.html). 
 Franchement, pourquoi se compliquer la vie en ajoutant une couche de complexité superflue quand on peut juste utiliser npm ?
 
-##NPM comme outil de build
+## NPM comme outil de build
 
 Ça faisait un moment que j'avais en tête de tester npm comme outil de build, et dès que je l'ai utilisé, c'est devenu une évidence. 
 Au lieu de devoir apprendre à utiliser des tas d'éphémères et obscurs plugins, on utilise simplement les commandes Linux de toujours. 
@@ -172,7 +172,7 @@ En regardant le fichier specRunner.html, on voit qu'il n'y a plus aucune référ
 </html>
 {% endhighlight %}
 
-###Précisions sur Browserify
+### Précisions sur Browserify
 
 Une chose à savoir pour ceux qui n'ont jamais utilisé Browserify : la commande browserify prend 1 fichier en entrée et produit 1 fichier en sortie. 
 Ça ne sert à rien d'essayer de concaténer ses fichiers ES2015 avant de les passer à Browserify. Celui-ci va aller chercher les fichiers dont l'appli a besoin en suivant les "import" ES2015. 
@@ -185,7 +185,7 @@ import contactControllerSpec from './ContactController.spec';
 import nombreEntierFilterSpec from './nombreEntierFilter.spec';
 {% endhighlight %}
 
-##Conclusion
+## Conclusion
 
 Quelque soit l'outil de build que vous utilisez, il n'y a pas de raison de se priver des nouveautés d'ECMAScript 2015 qui rendront votre application bien plus maintenable. 
 Et si vous démarrez un nouveau projet, c'est l'occasion de se débarrasser de Grunt et Gulp et d'utiliser npm à la place.
@@ -195,7 +195,7 @@ Les sources des deux versions de l'application sont disponibles sur GitHub :
 - [V1 (JavaScript)](https://github.com/jffourmond/freelance-impot/tree/1.0.0-2015-js)
 - [V2 (ECMAScript 2015)](https://github.com/jffourmond/freelance-impot/tree/2.0.0-2015-es6)
 
-##Références
+## Références
 
 - [Coder une application minimale en Angular 1 et ECMAScript 2015, sans outil de build](https://jffourmond.github.io/2015/12/05/appli-angular-ES6-minimale/)
 - [Learn ES2015 (Babel)](http://babeljs.io/docs/learn-es2015/)
