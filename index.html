@@ -11,13 +11,13 @@ layout: default
     {% endif %}
     {% include article-header.html page=post link=true %}
         <section class="post-content">
-            {% assign size = post.content | split: site.excerpt_separator | size %}
-            {% if size > 1 %}
-            {{ post.excerpt }}
-            <a class="btn" href="{{ post.url | prepend: site.baseurl }}">{{ site.str_read_more }}</a>
-            {% else %}
-            {{ post.content }}
-            {% endif %}
+            <div>
+                {{ post.excerpt | truncatewords:150 }}
+            </div>
+            <div>
+              	 <br/>
+                <a class="btn" href="{{ post.url | prepend: site.baseurl }}">{{ site.str_read_more }}</a>              
+            </div>
         </section>
     </article>
 </div>
