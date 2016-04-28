@@ -57,7 +57,7 @@ str_show_all_posts: Voir tous les posts
 #
 # Recent posts.
 #
-recent_posts_num: 10
+recent_posts_num: 4
 
 #
 # Pagination.
