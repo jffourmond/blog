@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Migrer une application AngularJS 1.x de JavaScript vers ECMAScript 2015 avec npm
-tags: ECMAScript ES2015 ES6 JavaScript Angular Browserify Babel Jasmine Gulp npm Docker
+tags: ECMAScript ES2015 ES6 JavaScript Angular Browserify Babel Lebab Jasmine Gulp npm Docker
 ---
 [Dans un article précédent](https://jffourmond.github.io/2015/12/05/appli-angular-ES6-minimale/), 
 j'ai essayé de décrire comment créer une application AngularJS minimale en ECMAScript 2015 sans outil de build. 
@@ -54,8 +54,8 @@ import CalculController from './CalculController';
 import CourbeController from './CourbeController';
 import ContactController from './ContactController';
 
-let applicationName = 'freelance-impot';
-let app = angular.module(applicationName, ['ngRoute', 'nvd3ChartDirectives']);
+const applicationName = 'freelance-impot';
+const app = angular.module(applicationName, ['ngRoute', 'nvd3ChartDirectives']);
 angular.module(applicationName).filter('nombreEntier', nombreEntierFilter);
 angular.module(applicationName).service("CalculService", CalculService);
 angular.module(applicationName).controller("CalculController", ["CalculService", CalculController]);
@@ -79,16 +79,25 @@ describe("CalculController", calculControllerSpec);
 function calculControllerSpec() {
     let ctrl;
 
-    beforeEach(function () {
-        let calculService = new CalculService();
+    beforeEach(() => {
+        const calculService = new CalculService();
         ctrl = new CalculController(calculService);
     });
 
-    it('devrait être initialisé', function () {
+    it('devrait être initialisé', () => {
         expect(ctrl.remuneration).toBe(0);
     });
 }    
 {% endhighlight %} 
+
+### Lebab
+
+Il y aura certainement des parties de votre code que vous ne penserez pas à réécrire à la sauce ES2015. 
+Pour vous aider à utiliser toutes les nouvelles fonctionnalités d'ES2015, il y a Lebab (Babel à l'envers). 
+Lebab, c'est un outil en ligne de commande qui s'installe avec npm et qui réécrit les bouts de votre code ES5 ou ES2015 qui pourraient être améliorés. 
+Une fois la migration de mon application terminée, j'ai passé Lebab sur mes fichiers source, et il restait encore pas mal de bouts de code à l'ancienne... 
+('use strict' inutiles, constantes déclarées avec let au lieu de const, fonctions anonymes, concaténation de String). 
+Bref, Lebab est un compagnon idéal pour perdre ses vieux réflexes de JavaScript, en cas de migration comme en cas de nouveau projet.
 
 ## Ajout d'un outil de build
 
