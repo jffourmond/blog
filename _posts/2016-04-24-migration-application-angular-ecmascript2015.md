@@ -93,10 +93,10 @@ function calculControllerSpec() {
 ### Lebab
 
 Il y aura certainement des parties de votre code que vous ne penserez pas à réécrire à la sauce ES2015. 
-Pour vous aider à utiliser toutes les nouvelles fonctionnalités d'ES2015, il y a Lebab (Babel à l'envers). 
+Pour vous aider à utiliser toutes les nouvelles fonctionnalités d'ES2015, il y a [Lebab](http://lebab.io/) (Babel à l'envers). 
 Lebab, c'est un outil en ligne de commande qui s'installe avec npm et qui réécrit les bouts de votre code ES5 ou ES2015 qui pourraient être améliorés. 
 Une fois la migration de mon application terminée, j'ai passé Lebab sur mes fichiers source, et il restait encore pas mal de bouts de code à l'ancienne... 
-('use strict' inutiles, constantes déclarées avec let au lieu de const, fonctions anonymes, concaténation de String). 
+('use strict' inutiles, constantes déclarées avec let au lieu de const, fonctions anonymes, concaténation de String...). 
 Bref, Lebab est un compagnon idéal pour perdre ses vieux réflexes de JavaScript, en cas de migration comme en cas de nouveau projet.
 
 ## Ajout d'un outil de build
@@ -214,3 +214,4 @@ Les sources des deux versions de l'application sont disponibles sur GitHub :
 - [I Find Gulp.js Extremely Frustrating](https://www.tildedave.com/2015/01/07/i-find-gulp-extremely-frustrating.html)
 - [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
 - [Getting started with npm and Browserify in a React project](http://codeutopia.net/blog/2016/01/25/getting-started-with-npm-and-browserify-in-a-react-project/)
+- [ES6+ maintenant ! (vidéo)](https://youtu.be/KJzlllc7Jq8?list=PLCWW2DoKbvS9sUT2i2cS-3yG83P88eZt7)
