@@ -5,7 +5,7 @@ tags: Docker DevOps Linux Windows
 ---
 Utiliser la même image Docker (serveur + appli) sur tous ses environnements, c'est bien. 
 Mais en phase de développement, recréer une image à chaque modif du code, c'est long. 
-Pour éviter ça, il est possible d'ajouter ses sources au démarrage du conteneur Docker plutôt qu'au build de l'image. 
+Pour éviter ça quand on développe côté front, il est possible d'ajouter ses sources au démarrage du conteneur Docker plutôt qu'au build de l'image. 
 
 ## Sous Linux, c'est facile
 
