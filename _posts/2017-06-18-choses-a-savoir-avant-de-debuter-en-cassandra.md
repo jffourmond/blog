@@ -36,8 +36,7 @@ En CQL, les requêtes INSERT et UPDATE sont équivalentes. Si on fait deux INSER
 
 Dans le cadre d'une migration de données, j'ai du créer une nouvelle table légèrement différente de la table d'origine. 
 J'ai nommé cette nouvelle table *ma_table_v2*, en pensant la renommer en *ma_table* une fois que la migration serait terminée 
-et que l'ancienne *ma_table* serait supprimée. Cette opération qu'on a l'habitude de faire en relationnel n'est pas possible avec Cassandra. 
-Il faut donc toujours faire attention à toujours bien nommer ses tables. 
+et que l'ancienne *ma_table* serait supprimée. Cette opération qu'on a l'habitude de faire en relationnel n'est pas possible avec Cassandra. Il faut donc toujours prendre soin de bien nommer ses tables. 
 
 ### 4. Les requêtes ne se font pas forcément dans l'ordre
 
