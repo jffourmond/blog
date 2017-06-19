@@ -11,7 +11,7 @@ Avant de me mettre à Cassandra, j'avais regardé pas mal de vidéos sur le suje
 je suis passé à côté de certaines particularités. 
 Voici 5 choses que j'aurais aimé savoir quand j'ai débuté sur le sujet : 
 
-### 1. Le vocabulaire n'est pas clair
+### 1. Définitions
 
 *Cluster, clustering key, row, partition, noeud, table, column family...* en découvrant Cassandra, vous allez rencontrer de nouveaux mots clés dont la signification n'est pas toujours très claire. 
 
@@ -30,13 +30,13 @@ Rien à voir avec le cluster donc.
 
 ### 2. INSERT = UPDATE
 
-En CQL, les requêtes INSERT et UPDATE sont équivalentes. Si on fait deux INSERT sur la même primary key (partition key + clustering keys), les données du 1er INSERT seront écrasées. Inversement, si on exécute un UPDATE sur une primary key qui n'existe pas, les données seront insérées comme avec un INSERT. 
+En CQL, les requêtes INSERT et UPDATE sont équivalentes. Si on fait deux INSERT sur la même primary key (partition key + clustering keys), les données du 1er INSERT seront écrasées. Inversement, si on exécute un UPDATE sur une primary key qui n'existe pas, les données seront insérées comme avec un INSERT. Si on n'est pas au courant, ça peut perturber la 1ère fois !
 
 ### 3. On ne peut pas renommer une table
 
 Dans le cadre d'une migration de données, j'ai du créer une nouvelle table légèrement différente de la table d'origine. 
 J'ai nommé cette nouvelle table *ma_table_v2*, en pensant la renommer en *ma_table* une fois que la migration serait terminée 
-et que l'ancienne *ma_table* serait supprimée. Cette opération qu'on a l'habitude de faire en relationnel n'est pas possible avec Cassandra. Il faut donc toujours prendre soin de bien nommer ses tables. 
+et que l'ancienne *ma_table* serait supprimée. Cette opération qu'on a l'habitude de faire en relationnel n'est pas possible avec Cassandra. Il faut donc prendre soin de bien nommer ses tables dès le début. 
 
 ### 4. Les requêtes ne se font pas forcément dans l'ordre
 
@@ -48,8 +48,4 @@ Quand on exécute des DELETE suivis d'INSERT sur une même partition key, ça pe
 
 En relationnel, on crée une table de manière à ce qu’elle reflète au mieux le concept métier à modéliser. Les requêtes d’interrogation de cette table peuvent être variées et ne sont pas toutes connues au moment de la conception. La table doit pouvoir évoluer et l’ajout de colonnes supplémentaires n’a généralement pas d’impact sur les requêtes existantes.
 
-En Cassandra, tous les articles d’introduction mettent bien l’accent sur le fait qu’il faut modéliser ses tables en fonction des requêtes de lecture. Mais on ne dira jamais assez qu’il faut re-tester ses requêtes de lecture dès qu'on modifie une table, chaque modification pouvant invalider les requêtes de lecture existantes.
-
-Quand on a l’habitude de faire du SQL, il faut penser à tenir compte des limitations du CQL. On peut par exemple considérer comme acquis certains mots clés comme OR ou IN. Mais il n’y a pas de OR en CQL, et le IN a des restrictions : il ne peut porter que sur la dernière clustering key, et il est à ce jour incompatible avec les tables qui ont des colonnes de type collection.
-
-Il est donc indispensable de vérifier que toutes les requêtes de lecture fonctionnent quand on crée ou qu'on modifie une table, et ce même quand on pense qu’il n’y aura pas de problème. Les tests unitaires sont normalement là pour ça, mais avant de se lancer dans des modifications du code, il est préférable de faire une vérification rapide en exécutant ses requêtes à l’aide de cqlsh.
+En Cassandra, tous les bons articles d’introduction mettent l’accent sur le fait qu’il faut modéliser ses tables en fonction des requêtes de lecture. Mais on ne dira jamais assez qu’il faut re-tester ses requêtes de lecture dès qu'on modifie une table, chaque modification pouvant invalider les requêtes de lecture existantes. En effet, le CQL a des limitations qu'un développeur habitué au SQL a vite fait d'oublier. Par exemple, le mot clé IN dans une clause WHERE a des restrictions. Il ne peut porter que sur la dernière clustering key, et il est à ce jour incompatible avec les tables qui ont des colonnes de type collection. Il est donc indispensable de vérifier que toutes les requêtes de lecture fonctionnent quand on crée ou qu'on modifie une table, et ce même quand on pense qu’il n’y aura pas de problème. Les tests unitaires sont normalement là pour ça, mais avant de se lancer dans des modifications du code, il est préférable de faire une vérification rapide en exécutant ses requêtes à l’aide de cqlsh.
