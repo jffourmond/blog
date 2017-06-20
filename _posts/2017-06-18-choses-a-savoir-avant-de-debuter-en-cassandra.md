@@ -19,14 +19,11 @@ Pour commencer, il faut savoir que le vocabulaire a évolué avec le temps.
 Vous trouverez sans doute d'anciens articles qui parlent de column families et d'autres plus récents qui parlent de tables. 
 Une column family n'est rien d'autre qu'une **table**. C'est juste le nom qui a changé.
 
-Une **partition** est un sous-ensemble des données d'une table, constitué de **rows** partageant une même clé (nommée **partition key**). 
-Au niveau logique, une partition peut être vue comme un mini-shard, dont la distribution et la réplication dans le cluster 
+Le mot **cluster** est associé à plusieurs concepts dans Cassandra. Au niveau de l'architecture, un cluster constitue 
+l'ensemble des serveurs Cassandra, répartis en un ou plusieurs datacenters et appelés **nodes** ou noeuds. Un noeud ne doit pas être confondu avec une partition. Une **partition** est un sous-ensemble des données d'une table, constitué de **rows** partageant une même clé (nommée **partition key**) et peut être répliquée sur plusieurs noeuds. Au niveau logique, une partition peut être vue comme un mini-shard, dont la distribution et la réplication dans le cluster 
 sont gérées automatiquement par Cassandra.
 
-Le mot **cluster** est associé à plusieurs concepts dans Cassandra. Au niveau de l'architecture, un cluster constitue 
-l'ensemble des serveurs Cassandra, répartis en un ou plusieurs datacenters et appelés **nodes**. 
-Au niveau d'une table, une **clustering key** permet d'ordonner et de filtrer les rows au sein d'une partition, sur un noeud donné. 
-Rien à voir avec le cluster donc. 
+Au niveau d'une table, une **clustering key** permet d'ordonner et de filtrer les rows au sein d'une partition, sur un noeud donné. Rien à voir avec le cluster donc. 
 
 ### 2. INSERT = UPDATE
 
