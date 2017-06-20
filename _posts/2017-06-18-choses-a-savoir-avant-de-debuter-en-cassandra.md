@@ -38,7 +38,7 @@ Dans le cadre d'une migration de données, j'ai du créer une nouvelle table lé
 J'ai nommé cette nouvelle table *ma_table_v2*, en pensant la renommer en *ma_table* une fois que la migration serait terminée 
 et que l'ancienne *ma_table* serait supprimée. Cette opération qu'on a l'habitude de faire en relationnel n'est pas possible avec Cassandra. Il faut donc prendre soin de bien nommer ses tables dès le début. 
 
-### 4. Les requêtes ne se font pas forcément dans l'ordre
+### 4. Les écritures ne se font pas forcément dans l'ordre
 
 Pour avoir de bonnes performances, on choisit généralement d'exécuter les écritures de manière asynchrone. 
 Ce qui veut dire que les requêtes ne s'exécutent pas forcément dans l'ordre défini dans le code. 
